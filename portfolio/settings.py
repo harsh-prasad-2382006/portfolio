@@ -29,7 +29,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     "52.66.239.49",
-    "*",  # ✅ Just the domain, no protocol
+    "portfolio-z7em.onrender.com",  # ✅ Just the domain, no protocol
 ]
 
 
@@ -141,3 +141,8 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'harshprasad2382006@gmail.com'
 EMAIL_HOST_PASSWORD = 'tghf hwco repd rppe'  # Use app password for Gmail
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://portfolio-z7em.onrender.com/",
+]
