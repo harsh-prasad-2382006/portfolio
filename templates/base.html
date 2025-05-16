@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}My Portfolio{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  {% block css %}
+  <link rel="stylesheet" href="{% static "css/styles.css" %}">
+  {% endblock css %}
+  
+</head>
+<body class="bg-dark">
+{% comment %} <body style="background:#575555"> {% endcomment %}
+
+<!-- Navbar with hamburger (visible on small screens) -->
+<nav class="navbar navbar-dark bg-dark d-md-none fixed-top" style="background:transparent">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">My Portfolio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row min-vh-100">
+
+    <!-- Static sidebar for medium and up -->
+    <div class="col-md-3 col-lg-2 p-0 d-none d-md-block sidebar bg-dark">
+      <div class="d-flex flex-column h-100 text-white">
+        <h4 class="p-3 border-bottom">My Portfolio</h4>
+        <a href="{% url 'home' %}" class="mb-2 text-white {% if request.path == '/' %}active{% endif %}">
+  <i class="bi bi-house-door-fill me-2"></i>Home
+</a>
+<a href="{% url 'about' %}" class="mb-2 text-white {% if request.path == '/about/' %}active{% endif %}">
+  <i class="bi bi-person-fill me-2"></i>About
+</a>
+<a href="{% url 'skills' %}" class="mb-2 text-white {% if request.path == '/skills/' %}active{% endif %}">
+  <i class="bi bi-tools me-2"></i>Skills
+</a>
+<a href="{% url 'projects' %}" class="mb-2 text-white {% if request.path == '/projects/' %}active{% endif %}">
+  <i class="bi bi-folder-fill me-2"></i>Projects
+</a>
+<a href="{% url 'contact' %}" class="mb-2 text-white {% if request.path == '/contact/' %}active{% endif %}">
+  <i class="bi bi-envelope-fill me-2"></i>Contact
+</a>
+        <div class="mt-auto p-3 text-white small">© 2025</div>
+      </div>
+    </div>
+
+    <!-- Offcanvas sidebar for small screens -->
+    <div class="offcanvas offcanvas-start bg-dark text-white d-md-none" tabindex="-1" id="sidebarMenu">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">My Portfolio</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column">
+        <a href="{% url 'home' %}" class="mb-3 text-white nav-link {% if request.path == '/' %}active{% endif %}"><i class="bi bi-house-door-fill me-2"></i>Home</a>
+        <a href="{% url "about" %}" class="mb-3 text-white nav-link {% if request.path == '/about/' %}active{% endif %}"><i class="bi bi-person-fill me-2"></i>About</a>
+        <a href="{% url "skills" %}" class="mb-3 text-white nav-link {% if request.path == '/skills/' %}active{% endif %}"><i class="bi bi-tools me-2"></i>Skills</a>
+        <a href="{% url "projects" %}" class="mb-3 text-white nav-link {% if request.path == '/projects/' %}active{% endif %}"><i class="bi bi-folder-fill me-2"></i>Projects</a>
+        <a href="{% url "contact" %}" class="mb-3 text-white nav-link {% if request.path == '/contact/' %}active{% endif %}"><i class="bi bi-envelope-fill me-2"></i>Contact</a>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+      {% block content %}
+
+      {% endblock %}
+    </main>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

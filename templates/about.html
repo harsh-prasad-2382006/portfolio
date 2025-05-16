@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+About
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "css/about.css" %}">
+{% endblock css %}
+
+{% block content %}
+
+<section id="about">
+    <div class="container-fluid p-3 mt-3">
+        <div class="p-4 bg-dark rounded" style="box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);">
+            <!-- First Row: Image + Intro -->
+            <div class="about1 d-flex flex-column flex-md-row align-items-center gap-4 animate-fadeInLeft">
+                <!-- Profile Image -->
+                <div class="text-center">
+                    <img src="{% static 'images/profilepic.jpeg' %}" alt="Harsh Prasad"
+                        class="img-fluid rounded-circle shadow" style="max-width: 200px; border: 4px solid #0d6efd;">
+                </div>
+                <!-- Intro Text -->
+                <div>
+                    <h2 class="mb-3">About Me</h2>
+
+                    <!-- ✅ New Objective Section -->
+
+                    <p>Hello! I’m <strong>Harsh Prasad</strong>, a passionate <strong>Full-Stack Web Developer</strong>
+                        focused on building impactful digital solutions.</p>
+                    <p>I specialize in responsive, user-friendly applications using modern tech like <strong>HTML, CSS,
+                            JavaScript, React.js, Python, and Django</strong>.</p>
+                    <p>My projects — <em>Blood Bank Management System</em>, <em>Anime Hub</em>, and <em>Blog App</em> —
+                        show my ability to build scalable, real-world platforms.</p>
+                </div>
+            </div>
+
+            <!-- Second Row: Education + Experience -->
+            <div class="about2 mt-5 animate-fadeInUp ">
+                <div class="d-flex flex-lg-row flex-column gap-4">
+                    <div class="flex-fill">
+                        <h4 class="text-primary"><i class="bi bi-mortarboard-fill me-2"></i>Education</h4>
+                        <p>I’m currently pursuing my education in computer science. I’ve built strong fundamentals in
+                            programming, algorithms, and databases — and I enhance my skills with hands-on projects and
+                            online courses.</p>
+                    </div>
+                    <div class="flex-fill">
+                        <h4 class="text-primary"><i class="bi bi-briefcase-fill me-2"></i>Experience</h4>
+                        <p>Though early in my journey, I’ve developed several full-stack projects simulating real-world
+                            systems. I enjoy solving problems, debugging, collaborating, and bringing ideas to life
+                            through code.
+                        </p>
+                    </div>
+                    <div class="flex-fill">
+                        <h4 class="text-primary"><i class="bi bi-bullseye me-2"></i>Objective</h4>
+                        <p>As a highly motivated and dedicated aspiring full-stack web developer, my objective is to
+                            build innovative, efficient, and user-centric web applications that solve real-world
+                            problems. I aim to continuously grow my skills and contribute to impactful projects in a
+                            collaborative environment.</p>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <a href="{% url "projects" %}" class="btn btn-warning me-2"><i
+                            class="fas fa-folder-open me-1"></i>View My Projects</a>
+                    <a href="{% url "contact" %}" class="btn btn-outline-primary"><i
+                            class="bi bi-person-lines-fill me-1"></i>
+                        Get in Touch</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

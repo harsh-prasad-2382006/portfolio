@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static "css/home.css" %}">
+{% endblock css %}
+
+{% block content %}
+
+
+
+<marquee behavior="scroll" scrollamount="12" direction="right">
+    Welcome to my Portfolio 🚀
+</marquee>
+
+<div class="container py-3 home-container text-center text-light">
+
+    <div class="home-upper mb-3 slide-in-top text-center">
+    <h1 class="display-4 fw-bold">Hello, I'm Harsh Prasad</h1>
+    <h3 class="fw-semibold">Welcome to My Portfolio</h3>
+    <p class="lead">Full-Stack Web Developer | Photographer | Photo Editor | Passionate Learner</p>
+</div>
+
+<!-- Introduction Paragraph -->
+<div class="home-content mb-5 fade-in-delay text-center">
+    <p style="width:90%; margin:auto; animation: fadeInUp 1.5s ease-in-out; text-align:center;">
+        Welcome to my personal portfolio website! I'm a passionate full-stack web developer with expertise in building responsive, user-friendly applications. I am constantly learning new technologies and improving my skills to deliver impactful and innovative solutions. Alongside web development, I have a keen interest in photography and photo editing, which helps me create visually stunning digital experiences.
+        <br><br>
+        Feel free to explore my projects and learn more about my skills, experiences, and the journey I've had so far in the tech world.
+    </p>
+    <a href="{% static 'resume.pdf' %}" download class="btn btn-primary mt-4 animate-pop">
+        📄 Download Resume
+    </a>
+</div>
+
+<!-- Social Media Icons -->
+<div class="social-icons d-flex justify-content-center gap-4 mt-3 fade-in-delay">
+    <a href="https://github.com/harsh-prasad-2382006" target="_blank" class="text-light fs-4">
+        <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/harsh-prasad-00770726a" target="_blank" class="text-light fs-4">
+        <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=100074397496864" target="_blank" class="text-light fs-4">
+        <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://telegram.me/yourusername" target="_blank" class="text-light fs-4">
+        <i class="fab fa-telegram-plane"></i>
+    </a>
+    <a href="https://www.instagram.com/harsh_prasad_2382006/" target="_blank" class="text-light fs-4">
+        <i class="fab fa-instagram"></i>
+    </a>
+</div>
+
+</div>
+
+<div class="container">
+    <h2 class="text-center text-primary mb-4 fade-in-up-heading">Explore My Work</h2>
+    <div class="row g-2 justify-content-center fade-in-up-delayed">
+        <div class="col-md-3">
+            <div class="card bg-dark text-light h-100 border border-primary shadow-lg fade-in-up hover-grow">
+                <div class="card-body text-center">
+                    <i class="fas fa-user fa-2x text-primary mb-3"></i>
+                    <h5 class="card-title">About Me</h5>
+                    <p class="card-text">Learn more about my journey, passion, and what motivates me.</p>
+                    <a href="{% url 'about' %}" class="btn btn-outline-primary btn-sm">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card bg-dark text-light h-100 border border-success shadow-lg fade-in-up hover-grow">
+                <div class="card-body text-center">
+                    <i class="fas fa-folder-open fa-2x text-success mb-3"></i>
+                    <h5 class="card-title">Projects</h5>
+                    <p class="card-text">Explore the real-world projects I’ve built using modern technologies.</p>
+                    <a href="{% url 'projects' %}" class="btn btn-outline-success btn-sm">View Projects</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card bg-dark text-light h-100 border border-warning shadow-lg fade-in-up hover-grow">
+                <div class="card-body text-center">
+                    <i class="fas fa-tools fa-2x text-warning mb-3"></i>
+                    <h5 class="card-title">Skills</h5>
+                    <p class="card-text">See the tools, languages, and frameworks I work with.</p>
+                    <a href="{% url 'skills' %}" class="btn btn-outline-warning btn-sm">View Skills</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock content %}
