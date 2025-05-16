@@ -144,5 +144,5 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://portfolio-z7em.onrender.com/",
+    "https://portfolio-z7em.onrender.com",
 ]
